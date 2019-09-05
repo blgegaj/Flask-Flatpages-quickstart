@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.title {
+    margin-bottom: 20px;
+}
+.container {
+    display: table;
+    margin: 20px auto 0px;
+}
+
+.container a{
+    text-decoration: none;
+    display: block;
+    color: blue;
+}

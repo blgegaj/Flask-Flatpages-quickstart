@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div class="container">
+    <h3 class="title">Recent Posts</h3>
+    {% for post in posts %}
+        <a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}">
+            {{ post.title }}
+        </a>
+        <small>{{ post.date }}</small>
+    {% endfor %}
+</div>
+
+{% endblock %}

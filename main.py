@@ -3,6 +3,7 @@ import pygments, markdown
 from flask_flatpages import FlatPages, pygments_style_defs
 
 app = Flask(__name__)
+
 def my_markdown(text):
     markdown_text = render_template_string(text)
     pygmented_text = markdown.markdown(markdown_text, extensions=["codehilite", "fenced_code", "tables"])

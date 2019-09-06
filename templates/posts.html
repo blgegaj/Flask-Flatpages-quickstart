@@ -1,13 +1,15 @@
+<!-- {% from "_post.html" import render_post %} -->
 {% extends "base.html" %}
 {% block body %}
 
-<div class="container">
-    <h3 class="title">Recent Posts</h3>
+<div class="posts">
     {% for post in posts %}
-        <a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}">
-            {{ post.title }}
-        </a>
-        <small>{{ post.date }}</small>
+    <div class="row">
+        <div class="offset-sm-2 col-sm-8">
+            {{ render_post(post[0], post[1], post[2] , post[3]) }}
+        </div>
+    </div> <!-- row -->
+    <div class="spacer"></div>
     {% endfor %}
 </div>
 

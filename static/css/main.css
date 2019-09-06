@@ -4,21 +4,75 @@
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
 }
+
+.main-content {
+    margin-top: 100px;
+}
+
+.jumbotron {
+    height: 80vh;
+}
+
+.photo{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-bottom: 30px;
+    border-radius: 100%;
+    background-color: #fff;
+}
+
+.intro,
+.posts {
+    height: 90vh;
+}
+
+.spacer {
+    margin-bottom: 30px;
+}
+
+.card-title {
+    margin-bottom: 5px;
+}
+
+.post-content {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.card-date {
+    margin-bottom: 20px;
+}
+
+/* .navbar {
+    background-color: #303F9F;
+}
+
+.navbar a {
+    color: #FFFFFF;
+}
+
+.nav-link.disabled {
+    color: #757575;
+} */
 
 .title {
     margin-bottom: 20px;
 }
-.container {
+
+.content {
     display: table;
     margin: 20px auto 0px;
+
 }
 
-.container a{
+.content a {
     text-decoration: none;
     display: block;
     color: blue;
+
 }
 
 .codehilite {

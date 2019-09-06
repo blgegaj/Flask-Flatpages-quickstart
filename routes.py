@@ -1,6 +1,11 @@
 from flask import render_template
 from main import app, flatpages
+from flask_flatpages import pygments_style_defs
 from config import Config
+
+# @app.route('/pygments.css')
+# def pygments_css():
+#     return pygments_style_defs("monokai"), 200, {"Content-Type":"text/css"}
 
 @app.route("/")
 def posts():

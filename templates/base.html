@@ -6,9 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Peter's New Website Yall</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-4.3.1-dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pygments.css')  }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    
+
 </head>
 <body>
     {% block body %}{% endblock %}
+
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-4.3.1-dist/js/bootstrap.min.js') }}"></script>
 </body>
 </html>

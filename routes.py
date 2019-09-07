@@ -52,7 +52,10 @@ def posts(page):
         for post in posts:
             tmp.append(get_post_details(post))
         posts = tmp
-        return render_template('posts.html', posts=posts, previous_page=previous_page, next_page=next_page, page=1)
+        page = 1
+        if page < pages:
+            next_page = page+1
+        return render_template('posts.html', posts=posts, previous_page=previous_page, next_page=next_page, page=page)
 
     if page > 0:
         previous_page = page-1

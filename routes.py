@@ -62,9 +62,6 @@ def posts(page):
     if page < pages:
         next_page = page+1   
 
-    print(previous_page)
-    print(next_page) 
-
     start = (page-1)*POST_PAGES
     end = (page-1)*POST_PAGES + POST_PAGES    
     posts = posts[start:end]

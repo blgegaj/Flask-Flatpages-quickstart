@@ -24,9 +24,12 @@ body {
     background-color: #fff;
 }
 
-.intro,
-.posts {
+.intro{
     height: 90vh;
+}
+
+.posts {
+    padding-bottom: 30px;
 }
 
 .spacer {

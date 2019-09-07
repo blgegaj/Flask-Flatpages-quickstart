@@ -1,10 +1,15 @@
-{% macro render_post(title, date, body, link) %}
+{% macro render_post(title, date, description, link, body) %}
+
 <div class="card">
         <div class="card-body">
             <h4 class="card-title">{{ title }}</h4>
             <h6 class="card-date">Release date: {{ date }}</h6>
-            <p class="card-text">{{ body }}
+            <p class="card-text">{{ description }}
             </p>
+            <br/>
+            {% if body %}
+            <p class="card-body">{{ body }}</p>
+            {% endif %}
             <a href="{{ url_for('post', name=link.replace('posts/', '')) }}" class="btn btn-primary">Read more ..</a>
         </div>
     </div>

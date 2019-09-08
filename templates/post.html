@@ -2,8 +2,10 @@
 {% block body %}
 
 <div class="post-content">
-    {{ post.html|safe }}
-    {{ post.title }}
-    {{ post.date }}
+    <h4>{{ post.title }}</h4>
+    <h6>Released at: {{ post.date }}</h6>
+    <div class="content-body">
+        {{ post.html|safe }}
+    </div>
 </div>
 {% endblock %}

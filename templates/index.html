@@ -7,17 +7,21 @@
         <div class="row">
             <div class="col-md-4 col-sm-12">
                 <div class="photo">
-                    <!-- Photo goes here -->
+
                 </div>
             </div>
-            <div class="col-md-8 col-sm-12">
+            <div class="intro-text col-md-8 col-sm-12">
                 <h1>My Website</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente tenetur molestias voluptates modi id commodi soluta ex deserunt incidunt distinctio?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente tenetur molestias voluptates modi
+                    id commodi soluta ex deserunt incidunt distinctio?</p>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum ipsam soluta nam, delectus dolores
                     nemo facilis dolor? Quae maiores, reiciendis illo perspiciatis officiis ipsa amet, quisquam beatae
                     quod magnam suscipit!</p>
                 <!-- Button trigger modal -->
             </div>
+        </div>
+        <div class="row">
+
         </div>
     </div>
 </div>
@@ -28,16 +32,22 @@
             <h3>Recent Posts</h3>
         </div>
         <div class="col-sm-9">
+            {% if posts[0] %}
             {{ render_post(posts[0][0], posts[0][1], posts[0][2] , posts[0][3]) }}
+            {% endif %}
         </div>
     </div> <!-- row -->
     <div class="spacer"></div>
     <div class="row">
         <div class="col-sm-6">
+            {% if posts[1] %}
             {{ render_post(posts[1][0], posts[1][1], posts[1][2] , posts[1][3]) }}
+            {% endif %}
         </div>
         <div class="col-sm-6">
+            {% if posts[2] %}
             {{ render_post(posts[2][0], posts[2][1], posts[2][2] , posts[2][3]) }}
+            {% endif %}
         </div>
     </div> <!-- row -->
 </div>

@@ -10,7 +10,7 @@
             {% if body %}
             <p class="card-body">{{ body }}</p>
             {% endif %}
-            <a href="{{ url_for('post', name=link.replace('posts/', '')) }}" class="btn btn-primary">Read more ..</a>
+            <a href="{{ url_for('post', name=link.replace('posts/', '')) }}" class="btn btn-primary">Read more</a>
         </div>
     </div>
 {% endmacro %}

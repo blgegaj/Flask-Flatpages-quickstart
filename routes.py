@@ -1,15 +1,15 @@
-from flask import render_template
+from flask import render_template, redirect, url_for
 from main import app, flatpages
 from flask_flatpages import pygments_style_defs
 from config import Config
 import math
 import random
 
-# @app.route('/pygments.css')
-# def pygments_css():
-#     return pygments_style_defs("monokai"), 200, {"Content-Type":"text/css"}
-
 POST_PAGES = 4
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return redirect(url_for("index"))
 
 @app.route("/")
 def index():
@@ -35,7 +35,7 @@ def get_post_details(post):
     return [title, date, description, post.path, body]
     
 
-@app.route("/posts/<int:page>")
+@app.route("/posts/<int:page>/")
 def posts(page):
 
     posts = [post for post in flatpages if post.path.startswith(Config.POSTS_DIR)]
@@ -60,7 +60,7 @@ def posts(page):
     if page > 0:
         previous_page = page-1
     if page < pages:
-        next_page = page+1   
+        next_page = page+1 
 
     start = (page-1)*POST_PAGES
     end = (page-1)*POST_PAGES + POST_PAGES    

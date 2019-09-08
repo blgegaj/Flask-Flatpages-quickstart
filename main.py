@@ -1,15 +1,7 @@
-from flask import Flask, render_template_string
-import pygments, markdown
-from flask_flatpages import FlatPages, pygments_style_defs
+from flask import Flask
+from flask_flatpages import FlatPages
 
 app = Flask(__name__)
-
-def my_markdown(text):
-    markdown_text = render_template_string(text)
-    pygmented_text = markdown.markdown(markdown_text, extensions=["codehilite", "fenced_code", "tables"])
-    return pygmented_text
-
-app.config["FLATPAGES_HTML_RENDERER"] = my_markdown
 flatpages = FlatPages(app)
 
 from routes import *

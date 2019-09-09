@@ -2,6 +2,7 @@
 from flask import render_template_string
 import pygments, markdown
 
+# this is function that returnes an editor like syntax highlight code sections in the markdown
 def my_markdown(text):
     markdown_text = render_template_string(text)
     pygmented_text = markdown.markdown(markdown_text, extensions=["codehilite", "fenced_code", "tables"])

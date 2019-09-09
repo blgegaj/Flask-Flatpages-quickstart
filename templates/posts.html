@@ -3,34 +3,44 @@
 {% block body %}
 
 <div class="posts">
+    <!-- for each post in the posts array -->
     {% for post in posts %}
     <div class="row">
         <div class="offset-sm-2 col-sm-8">
+            <!-- use the macro render_post which is located in the _post.html tempalte -->
             {{ render_post(post[0], post[1], post[2], post[3], post[4]) }}
         </div>
     </div> <!-- row -->
     <div class="spacer"></div>
     {% endfor %}
+
+    <!-- logic for the paginatiob -->
     <nav aria-label="Page navigation example offset-sm-2">
         <ul class="pagination justify-content-center">
 
+            <!-- if the previous_page variable is set to false from the route then to the previous button a disabled class is included-->
             {% if not previous_page %}
             <li class="page-item disabled">
                 <a class="page-link" href="" tabindex="-1">Previous</a>
             </li>
+            <!-- else the disabled class is not included and also a link to the previous page is displayed -->
             {% else %}
             <li class="page-item">
                 <a class="page-link" href="{{ url_for( 'posts', page=previous_page)}}" tabindex="-1">Previous</a>
             </li>
             <li class="page-item"><a class="page-link" href="{{ url_for( 'posts', page=previous_page)}}">{{previous_page}}</a></li>
             {% endif %}
+            <!-- display the current page -->
             <li class="page-item"><a class="page-link" href="{{ url_for( 'posts', page=page)}}">{{page}}</a></li>
+            <!-- if the next_page variable is set to false from the route then to the next button a disabled class is included -->
             {% if not next_page %}
             <li class="page-item disabled">
                 <a class="page-link" href="">Next</a>
-            </li>           
+            </li>   
+            <!-- else the disabled class is not inluded -->
             {% else %}
             <li class="page-item"><a class="page-link" href="{{ url_for( 'posts', page=next_page)}}">{{next_page}}</a></li>
+            <!-- and a link to the next page is rendered -->
             <li class="page-item">
                 <a class="page-link" href="{{ url_for( 'posts', page=next_page)}}">Next</a>
             </li>
